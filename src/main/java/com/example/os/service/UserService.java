@@ -13,7 +13,7 @@ public class UserService {
         return    userRepository.save(user);
     }
 
-    public User save2(String name, int age, String phone) {
+    public User  save2(String name, int age, String phone) {
         User user = new User();
         user.setName(name);
         user.setAge(age);

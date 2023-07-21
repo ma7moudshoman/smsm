@@ -4,10 +4,9 @@ import com.example.os.model.User;
 import com.example.os.repo.UserRepository;
 import com.example.os.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class MainController {
@@ -57,5 +56,9 @@ public class MainController {
         return userRepository.save(user);
 
     }
+   @GetMapping("getall")
+    public List<User> getall() {
+       return userRepository.findAll();
+   }
 
 }
